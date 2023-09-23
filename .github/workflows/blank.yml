@@ -22,7 +22,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-
+      
+      - name: Change permission of gradlew
+        run: chmod +x ./gradlew
+        
       # Runs a single command using the runners shell
-      - name: Run a one-line script
+      - name: Tests with gradlew
         run: ./gradlew test
